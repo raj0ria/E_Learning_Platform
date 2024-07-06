@@ -29,16 +29,19 @@ public class JpaApplication {
 
 	private void initializeDatabase() {
 		// Logic to initialize the database
-
-		var author = Author.builder()
-				.firstName("Ashish")
-				.lastName("Sharma")
-				.age(30)
-				.email("ashish13102376@gmail.com")
-				.build();
-
-		authorRepository.save(author);
-		System.out.println("Database initialized.");
+		String email = "ashish13102376@gmail.com";
+		if (authorRepository.findByEmail(email) == null) {
+			var author = Author.builder()
+					.firstName("Ashish")
+					.lastName("Sharma")
+					.age(30)
+					.email(email)
+					.build();
+			authorRepository.save(author);
+			System.out.println("Database initialized.");
+		} else {
+				System.out.println("Author already exists, skipping initialization.");
+		}
 	}
 
 }
