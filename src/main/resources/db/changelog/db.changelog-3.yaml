@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Ashish Sharma
+      changes:
+        - renameTable:
+            oldTableName: author
+            newTableName: author_tbl
