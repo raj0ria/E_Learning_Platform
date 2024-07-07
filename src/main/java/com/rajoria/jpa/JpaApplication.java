@@ -15,33 +15,37 @@ public class JpaApplication {
 		SpringApplication.run(JpaApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner() {
-		return args -> {
-			System.out.println("Hello, this is executed on application startup!");
-			initializeDatabase();
-		};
-	}
+
+	/*
+	 @Bean
+	 public CommandLineRunner commandLineRunner() {
+	 return args -> {
+	 System.out.println("Hello, this is executed on application startup!");
+	 initializeDatabase();
+	 };
+	 }
 
 
-	@Autowired
-	AuthorRepository authorRepository;
+	 @Autowired
+	 AuthorRepository authorRepository;
 
-	private void initializeDatabase() {
-		// Logic to initialize the database
-		String email = "ashish13102376@gmail.com";
-		if (authorRepository.findByEmail(email) == null) {
-			var author = Author.builder()
-					.firstName("Ashish")
-					.lastName("Sharma")
-					.age(30)
-					.email(email)
-					.build();
-			authorRepository.save(author);
-			System.out.println("Database initialized.");
-		} else {
-				System.out.println("Author already exists, skipping initialization.");
-		}
-	}
+	 private void initializeDatabase() {
+	 // Logic to initialize the database
+	 String email = "ashish13102376@gmail.com";
+	 if (authorRepository.findByEmail(email) == null) {
+	 var author = Author.builder()
+	 .firstName("Ashish")
+	 .lastName("Sharma")
+	 .age(30)
+	 .email(email)
+	 .build();
+	 authorRepository.save(author);
+	 System.out.println("Database initialized.");
+	 } else {
+	 System.out.println("Author already exists, skipping initialization.");
+	 }
+	 }
+	 */
+
 
 }

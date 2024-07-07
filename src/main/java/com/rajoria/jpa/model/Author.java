@@ -7,18 +7,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "author_tbl")
 public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @ManyToMany(mappedBy = "authors")
+    private Set<Course> courses = new HashSet<>();
 
     @Column(name = "first_name")
     private String firstName;
@@ -37,14 +41,10 @@ public class Author {
     private LocalDateTime lastModified;
 
     @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
+    protected void onCreate() { createdAt = LocalDateTime.now();}
 
     @PreUpdate
-    protected void onUpdate() {
-        lastModified = LocalDateTime.now();
-    }
+    protected void onUpdate() { lastModified = LocalDateTime.now();}
 
 
 }
