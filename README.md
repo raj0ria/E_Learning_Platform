@@ -106,3 +106,22 @@ To set up the database, follow these steps:
    ```bash
    git clone https://github.com/your-repo/elearning-platform.git
    cd elearning-platform
+2. **Configure the Database:**
+   Update the application.properties file with your database configuration:
+   '''bash
+   spring.datasource.url=jdbc:postgresql://localhost:5432/elearning
+   spring.datasource.username=yourusername
+   spring.datasource.password=yourpassword
+3. ***Run the Application:***
+   '''bash
+   ./mvnw spring-boot:run
+4. ***Access the Application:***
+   Open your browser and navigate to http://localhost:8080.
+5. ***Contributing***
+   Contributions are welcome! Please fork the repository and submit pull requests for any enhancements or bug fixes.
+6. ***License***
+   This project is licensed under the MIT License - see the LICENSE file for details.
+7. ***Contact***
+   For any questions or feedback, please contact ashish13102376@gmail.com.
+
+****Thank you for using the E-Learning Platform! Happy development****
